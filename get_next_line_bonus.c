@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 13:41:00 by djin              #+#    #+#             */
-/*   Updated: 2023/07/11 09:59:03 by djin             ###   ########.fr       */
+/*   Created: 2023/07/12 21:50:09 by djin              #+#    #+#             */
+/*   Updated: 2023/07/12 21:56:57 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 // push string to the front
 char	*push_forward(char *buff)
@@ -90,15 +90,15 @@ static char	*read_txt(int fd, char *buff)
 
 char	*get_next_line(int fd)
 {
-	static char	*buff;
+	static char	*buff[1024];
 	char		*store_nline;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = read_txt(fd, buff);
-	if (!buff)
+	buff[fd] = read_txt(fd, buff[fd]);
+	if (!buff[fd])
 		return (NULL);
-	store_nline = store_line(buff);
-	buff = push_forward(buff);
+	store_nline = store_line(buff[fd]);
+	buff[fd] = push_forward(buff[fd]);
 	return (store_nline);
 }

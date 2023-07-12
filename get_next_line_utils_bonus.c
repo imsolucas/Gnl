@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 17:17:08 by djin              #+#    #+#             */
-/*   Updated: 2023/07/12 21:55:05 by djin             ###   ########.fr       */
+/*   Created: 2023/07/12 21:50:54 by djin              #+#    #+#             */
+/*   Updated: 2023/07/12 21:55:31 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 #include "get_next_line.h"
 #include <stdio.h>
